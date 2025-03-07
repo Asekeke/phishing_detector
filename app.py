@@ -21,7 +21,7 @@ def index():
 
         # Предсказываем (1 - фишинг, 0 - безопасно)
         prediction = model.predict(email_vector)[0]
-        result = "ФИШИНГ" if prediction == 1 else "БЕЗОПАСНО"
+        result = "Phishing!" if prediction == 1 else "Safe"
 
         return render_template("index.html", result=result, email_text=email_text)
 
